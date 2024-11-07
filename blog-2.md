@@ -120,8 +120,37 @@ getDog(securityDog);
 getDog(normalDog);
 
 ```
--  React Router: Implements React Router for client-side routing within the application.
--  Firebase Authentication: Integrates Firebase Authentication for user authentication and authorization.
+-  `Discriminated Union Type Guards`: Used in complex union types with shared properties. Can be used to you can use that to distinguish between the different cases when each variant of a union type has a unique literal value or property.
+
+```ts
+type Circle = {
+        shape: "circle";
+        radius: number;
+    }
+    
+type Rectangle = {
+        shape: "rectangle";
+        width: number;
+        height: number;
+    }
+    
+type Area = Circle | Rectangle;
+    
+const calculateShapeArea = (area: Area):number=>{
+    if(area.shape === "circle") {
+            const result = parseFloat((Math.PI*area.radius*area.radius).toFixed(2));
+            console.log(result);
+            return result;
+    }
+    else{
+            const result = parseFloat((area.width*area.height).toFixed(2));
+            console.log(result);
+            return result;
+    }
+}
+
+```
+
 
 
 
