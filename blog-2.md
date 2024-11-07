@@ -1,12 +1,29 @@
-## Destined Affinity
-A website dedicated to matrimony. Created using React for frontend, Node.js, Express.js and Firebase for backend and MongoDB for database.
+# Why are Type Guards Necessary? Discuss Various Types of Type Guards and Their Use Cases.
+Typescript is an upgrade to Javascript as it provides us with the ability to better document our code by adding static typing and advanced features. However in Typescript we often have to deal with data types which varies, which is a bit troublesome. Therefore to ensure that we avoid error and obtain our desired output, type guard plays an essential. At runtime, we are able to narrow down the possible types of a variable using type guard. In short- Safety with Union Types && Narrowing Types && Runtime Type Checking.
 
-# Live Link
-Firebase- https://destined-affinity.web.app/
+## Types of Type Guard
+Here I will be talking about the types of type guard I have learned and tried to implement during my practice sessions-
+-  typeof: In order to differentiate between primitive types(eg- number, string) typeof operator can be implemented.
 
-# Technologies
-Implemented the following:
--  MongoDB: Employs MongoDB for flexible and scalable data storage.
+```ts
+function getMin(numbers) {
+  let min = numbers[0];
+  for (const num of numbers) {
+    if (num < min) {
+      min = num;
+    }
+  }
+  return min;
+}
+
+const heights2 = [167, 190, 120, 165, 137];
+const min = getMin(heights2);
+console.log("Lowest number is", min);
+
+// PS C:\Projects\Log-22> node practice2.js
+// Lowest number is 120
+
+```
 -  Express.js: Utilizes Express.js for streamlined server-side development.
 -  Node.js: Leverages Node.js for scalable and high-performance server applications.
 -  React Router: Implements React Router for client-side routing within the application.
