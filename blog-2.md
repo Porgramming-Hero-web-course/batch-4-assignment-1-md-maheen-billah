@@ -20,7 +20,72 @@ const add = (param1: Alphanumeric, param2: Alphanumeric):Alphanumeric=>{
 const result1 = add(2,'3');
 
 ```
--  Express.js: Utilizes Express.js for streamlined server-side development.
+-  `instanceof`: Can be used to differentiate between objects consisting of different classes or if an objects is an instance of a constructor function.
+
+```ts
+class Car {
+    name: string;
+    model: string;
+
+    constructor(name: string, model:string){
+        this.name= name;
+        this.model= model;
+    }
+
+    horn(){
+        console.log(`beep beep`);
+    }
+}
+
+class Car1 extends Car {
+
+    constructor(name:string,model:string){
+        super(name,model)
+    }
+
+    specialBrakes(){
+        console.log(`It has special brakes`);
+    }
+}
+
+class Car2 extends Car {
+
+    constructor(name:string,model:string){
+        super(name,model)
+    }
+
+    nos(){
+        console.log(`It has nos`);
+    }
+}
+
+const isCar1 =(car:Car):car is Car1=>{
+    return car instanceof Car1;
+}
+const isCar2 =(car:Car):car is Car2=>{
+    return car instanceof Car2;
+}
+
+const getCar = (car: Car) => {
+    if(isCar1(car)){
+        car.specialBrakes()
+    }
+    else if(isCar2(car)){
+        car.nos()
+    }
+    else {
+        car.horn()
+    }
+}
+
+const car1 = new Car1("Toyota","Corolla X")
+const car2 = new Car2("Toyota","Corolla Z")
+
+
+getCar(car1);
+getCar(car2);
+
+```
 -  Node.js: Leverages Node.js for scalable and high-performance server applications.
 -  React Router: Implements React Router for client-side routing within the application.
 -  Firebase Authentication: Integrates Firebase Authentication for user authentication and authorization.
