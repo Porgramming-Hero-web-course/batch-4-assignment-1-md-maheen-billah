@@ -3,25 +3,21 @@ Typescript is an upgrade to Javascript as it provides us with the ability to bet
 
 ## Types of Type Guard
 Here I will be talking about the types of type guard I have learned and tried to implement during my practice sessions-
--  typeof: In order to differentiate between primitive types(eg- number, string) typeof operator can be implemented.
+-  `typeof`: In order to differentiate between primitive types(eg- number, string) typeof operator can be implemented.
 
 ```ts
-function getMin(numbers) {
-  let min = numbers[0];
-  for (const num of numbers) {
-    if (num < min) {
-      min = num;
+type Alphanumeric = string|number;
+const add = (param1: Alphanumeric, param2: Alphanumeric):Alphanumeric=>{
+
+    if(typeof param1 === 'number'&& typeof param2 === 'number') {
+        return param1+param2
+    } else {
+        return param1.toString() + param2.toString();
     }
-  }
-  return min;
+    
 }
 
-const heights2 = [167, 190, 120, 165, 137];
-const min = getMin(heights2);
-console.log("Lowest number is", min);
-
-// PS C:\Projects\Log-22> node practice2.js
-// Lowest number is 120
+const result1 = add(2,'3');
 
 ```
 -  Express.js: Utilizes Express.js for streamlined server-side development.
