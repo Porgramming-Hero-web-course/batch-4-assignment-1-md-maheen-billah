@@ -1,4 +1,4 @@
-# Destined Affinity
+## Destined Affinity
 A website dedicated to matrimony. Created using React for frontend, Node.js, Express.js and Firebase for backend and MongoDB for database.
 
 # Live Link
